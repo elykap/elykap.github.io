@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kyle Poota – Portfolio</title>
+  <meta name="description" content="Kyle Poota – Computer Science student portfolio showcasing projects, skills, and experience." />
+  <meta property="og:title" content="Kyle Poota – Portfolio" />
+  <meta property="og:description" content="Computer Science student portfolio showcasing projects, skills, and experience." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0ea5e9" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="canonical" href="https://kylepoota.com/" />
+</head>
+<body>
+  <a class="sr-only" href="#main">Skip to content</a>
+  <header>
+    <div class="container nav">
+      <div class="logo">Kyle <span>Poota</span></div>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><button id="themeToggle" class="btn" aria-pressed="false" title="Toggle theme">🌗 Theme</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section class="hero no-image" id="home">
+      <div>
+        <h1 class="title">Hi, I'm Kyle — CS @ Wayne State</h1>
+        <p class="subtitle">I build clean, performant software. Interested in software engineering, web/mobile, and automotive tech. Here's a curated set of projects and experience.</p>
+        <div class="row">
+          <a class="btn" href="#projects">View Projects →</a>
+          <a class="btn" href="https://github.com/elykap" target="_blank" rel="noreferrer noopener">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/kylepoota" target="_blank" rel="noreferrer noopener">LinkedIn</a>
+          <a class="btn" href="/Kyle-Poota-Resume.pdf" target="_blank" rel="noreferrer noopener">Resume</a>
+        </div>
+        <div class="pills">
+          <span class="pill">C++ • Python • Java • HTML/CSS</span>
+          <span class="pill">React • Tailwind • Firebase</span>
+          <span class="pill">Data Structures & Algorithms</span>
+        </div>
+      </div>
+
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="muted">A few things I've built recently. Each card links to the repo and a live demo when available.</p>
+
+      <div class="grid" role="list">
+        <article class="card" role="listitem">
+          <h3>Library Management System <span class="muted">(C++)</span></h3>
+          <p>Supports add/remove/checkout, search, and basic persistence. GUI in JavaFX (Part 2).</p>
+          <div class="tags">
+            <span class="tag">C++</span><span class="tag">OOP</span><span class="tag">Unit Tests</span>
+          </div>
+          <div class="spacer"></div>
+          <div class="row">
+            <a class="btn" href="https://github.com/elykap/LibManagementSystem" target="_blank" rel="noreferrer noopener">Repo</a>
+          </div>
+        </article>
+
+        <article class="card" role="listitem">
+          <h3>University Chat App <span class="muted">(React + Firebase)</span></h3>
+          <p>Anonymous channel-based chat for students with smooth UI, E2EE roadmap, and dark mode. Deployed on Vercel.</p>
+          <div class="tags">
+            <span class="tag">React</span><span class="tag">Tailwind</span><span class="tag">Firebase</span>
+          </div>
+          <div class="spacer"></div>
+          <div class="row">
+            <a class="btn" href="https://github.com/elykap/Uni-Chat-App" target="_blank" rel="noreferrer noopener">Repo</a>
+            <a class="btn" href="https://chat-app-omega-one-67.vercel.app/" target="_blank" rel="noreferrer noopener">Live Demo</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">Skills</h2>
+        <div class="grid">
+            <article class="card">
+                <h3>Languages</h3>
+                <p>C++, Python, Java, JavaScript/TypeScript, SQL</p>
+            </article>
+
+            <article class="card">
+                <h3>Frameworks & Tools</h3>
+                <p>React, Tailwind, Firebase, Git/GitHub, Vite, JavaFX</p>
+            </article>
+
+            <article class="card">
+                <h3>CS Fundamentals</h3>
+                <p>Data Structures & Algorithms, OOP, Testing (gtest), Concurrency (basics), REST/HTTP</p>
+            </article>
+
+            <article class="card">
+                <h3>Coursework</h3>
+                <p>Data Structures & Algorithms, Linear Algebra, Probability & Statistics</p>
+            </article>
+        </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <p class="muted">Want to collaborate or chat? Reach out via email or socials.</p>
+      <div class="row">
+        <a class="btn" href="mailto:pootakyle@gmail.com">Email</a>
+        <a class="btn" href="https://github.com/elykap" target="_blank" rel="noreferrer noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/kylepoota" target="_blank" rel="noreferrer noopener">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row" style="justify-content: space-between;">
+        <span>© <span id="year"></span> Kyle Poota</span>
+        <span>Built with plain HTML/CSS/JS • <a class="link" href="#home">Back to top</a></span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
