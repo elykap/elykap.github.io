@@ -1,131 +1,255 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kyle Poota – Portfolio</title>
-  <meta name="description" content="Kyle Poota – Computer Science student portfolio showcasing projects, skills, and experience." />
-  <meta property="og:title" content="Kyle Poota – Portfolio" />
-  <meta property="og:description" content="Computer Science student portfolio showcasing projects, skills, and experience." />
+  <title>Kyle Poota — Software Engineering Student</title>
+
+  <meta name="description" content="Kyle Poota — CS senior at Wayne State. Full-stack projects with React, Firebase, Supabase, and C++." />
+  <meta property="og:title" content="Kyle Poota — Software Engineering Student" />
+  <meta property="og:description" content="Full-stack projects with React, Firebase, Supabase, and C++." />
   <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#0ea5e9" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="canonical" href="https://kylepoota.com/" />
+  <meta property="og:url" content="https://kylepoota.com" />
+  <meta property="og:image" content="https://kylepoota.com/og-preview.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: { colors: { accent: '#004AAD' } },
+        fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] }
+      },
+      darkMode: 'class'
+    }
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+
+  <link rel="icon" href="/favicon.ico" />
+  <style>
+    .hero-bg {
+      background: radial-gradient(1200px 600px at 20% -20%, rgba(0,74,173,0.25), transparent 60%),
+                  radial-gradient(1000px 600px at 80% -20%, rgba(0,74,173,0.18), transparent 60%);
+    }
+    .hover\:lift:hover { transform: translateY(-3px); }
+  </style>
 </head>
-<body>
-  <a class="sr-only" href="#main">Skip to content</a>
-  <header>
-    <div class="container nav">
-      <div class="logo">Kyle <span>Poota</span></div>
-      <nav aria-label="Primary">
-        <ul>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><button id="themeToggle" class="btn" aria-pressed="false" title="Toggle theme">🌗 Theme</button></li>
-        </ul>
+<body class="bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
+  <!-- NAV -->
+  <header class="sticky top-0 z-50 backdrop-blur bg-white/70 dark:bg-zinc-950/70 border-b border-zinc-200/60 dark:border-zinc-800">
+    <div class="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
+      <a href="#" class="font-semibold tracking-tight">kylepoota.com</a>
+      <nav class="hidden sm:flex items-center gap-6 text-sm">
+        <a href="#projects" class="hover:text-accent">Projects</a>
+        <a href="#about" class="hover:text-accent">About</a>
+        <a href="#contact" class="hover:text-accent">Contact</a>
+        <a href="https://github.com/elykap/elykap.github.io/releases/latest/download/Kyle_Poota_Resume.pdf"
+           class="px-3 py-1.5 rounded-md bg-accent text-white hover:opacity-90"
+           target="_blank" rel="noopener">Resume</a>
+        <button id="themeBtn" class="ml-2 rounded-md px-2 py-1 border border-zinc-300 dark:border-zinc-700 text-xs">
+          <span id="themeLabel">Dark</span>
+        </button>
       </nav>
+      <button id="menuBtn" class="sm:hidden p-2 text-zinc-600 dark:text-zinc-300" aria-label="Menu">☰</button>
     </div>
   </header>
 
-  <main id="main" class="container">
-    <section class="hero no-image" id="home">
-      <div>
-        <h1 class="title">Hi, I'm Kyle — CS @ Wayne State</h1>
-        <p class="subtitle">I build clean, performant software. Interested in software engineering, web/mobile, and automotive tech. Here's a curated set of projects and experience.</p>
-        <div class="row">
-          <a class="btn" href="#projects">View Projects →</a>
-          <a class="btn" href="https://github.com/elykap" target="_blank" rel="noreferrer noopener">GitHub</a>
-          <a class="btn" href="https://www.linkedin.com/in/kylepoota" target="_blank" rel="noreferrer noopener">LinkedIn</a>
-          <a class="btn"href="https://drive.google.com/file/d/1rbOcl5Edb1_iylHpNtlPB2IcOA1M_oBZ/preview" target="_blank" rel="noreferrer noopener">Resume</a>
-        </div>
-        <div class="pills">
-          <span class="pill">C++ • Python • Java • HTML/CSS</span>
-          <span class="pill">React • Tailwind • Firebase</span>
-          <span class="pill">Data Structures & Algorithms</span>
-        </div>
-      </div>
-
-    </section>
-
-    <section id="projects">
-      <h2 class="section-title">Featured Projects</h2>
-      <p class="muted">A few things I've built recently. Each card links to the repo and a live demo when available.</p>
-
-      <div class="grid" role="list">
-        <article class="card" role="listitem">
-          <h3>Library Management System <span class="muted">(C++)</span></h3>
-          <p>Supports add/remove/checkout, search, and basic persistence. GUI in JavaFX (Part 2).</p>
-          <div class="tags">
-            <span class="tag">C++</span><span class="tag">OOP</span><span class="tag">Unit Tests</span>
-          </div>
-          <div class="spacer"></div>
-          <div class="row">
-            <a class="btn" href="https://github.com/elykap/LibManagementSystem" target="_blank" rel="noreferrer noopener">Repo</a>
-          </div>
-        </article>
-
-        <article class="card" role="listitem">
-          <h3>University Chat App <span class="muted">(React + Firebase)</span></h3>
-          <p>Anonymous channel-based chat for students with smooth UI, and dark mode. Deployed on Vercel.</p>
-          <div class="tags">
-            <span class="tag">React</span><span class="tag">Tailwind</span><span class="tag">Firebase</span>
-          </div>
-          <div class="spacer"></div>
-          <div class="row">
-            <a class="btn" href="https://github.com/elykap/Uni-Chat-App" target="_blank" rel="noreferrer noopener">Repo</a>
-            <a class="btn" href="https://chat-app-omega-one-67.vercel.app/" target="_blank" rel="noreferrer noopener">Live Demo</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="skills">
-        <h2 class="section-title">Skills</h2>
-        <div class="grid">
-            <article class="card">
-                <h3>Languages</h3>
-                <p>C++, Python, Java, JavaScript/TypeScript, SQL</p>
-            </article>
-
-            <article class="card">
-                <h3>Frameworks & Tools</h3>
-                <p>React, Tailwind, Firebase, Git/GitHub, Vite, JavaFX</p>
-            </article>
-
-            <article class="card">
-                <h3>CS Fundamentals</h3>
-                <p>Data Structures & Algorithms, OOP</p>
-            </article>
-
-            <article class="card">
-                <h3>Coursework</h3>
-                <p>Data Structures & Algorithms, Linear Algebra, Probability & Statistics</p>
-            </article>
-        </div>
-    </section>
-
-    <section id="contact">
-      <h2 class="section-title">Contact</h2>
-      <p class="muted">Want to collaborate or chat? Reach out via email or socials.</p>
-      <div class="row">
-        <a class="btn" href="mailto:pootakyle@gmail.com">Email</a>
-        <a class="btn" href="https://github.com/elykap" target="_blank" rel="noreferrer noopener">GitHub</a>
-        <a class="btn" href="https://www.linkedin.com/in/kylepoota" target="_blank" rel="noreferrer noopener">LinkedIn</a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <div class="row" style="justify-content: space-between;">
-        <span>© <span id="year"></span> Kyle Poota</span>
-        <span>Built with plain HTML/CSS/JS • <a class="link" href="#home">Back to top</a></span>
+  <!-- HERO -->
+  <section class="hero-bg">
+    <div class="max-w-5xl mx-auto px-4 py-16 sm:py-24">
+      <p class="text-sm uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">Wayne State University • Detroit, MI</p>
+      <h1 class="mt-3 text-4xl sm:text-5xl font-extrabold leading-tight">
+        Hi, I’m <span class="text-accent">Kyle</span> — I build full-stack apps and backends with React, Firebase, Supabase, and C++.
+      </h1>
+      <p class="mt-4 max-w-2xl text-zinc-600 dark:text-zinc-300">
+        CS senior focused on practical tools and clean architectures. Currently shipping <strong>Intern Guide</strong> (AI-assisted internship planner) with a 5-person team.
+      </p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="#projects" class="px-4 py-2 rounded-md bg-accent text-white hover:opacity-90">See Projects</a>
+        <a href="https://github.com/elykap/elykap.github.io/releases/latest/download/Kyle_Poota_Resume.pdf"
+           class="px-4 py-2 rounded-md border border-zinc-300 dark:border-zinc-700"
+           target="_blank" rel="noopener">View Resume</a>
+        <a href="https://github.com/elykap" target="_blank" class="px-4 py-2 rounded-md border border-zinc-300 dark:border-zinc-700">GitHub</a>
+        <a href="https://linkedin.com/in/kylepoota" target="_blank" class="px-4 py-2 rounded-md border border-zinc-300 dark:border-zinc-700">LinkedIn</a>
       </div>
     </div>
+  </section>
+
+  <!-- QUICK STATS -->
+  <section class="py-8 border-t border-zinc-200/70 dark:border-zinc-800">
+    <div class="max-w-5xl mx-auto px-4 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+      <div class="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4">
+        <div class="text-2xl font-bold">3</div>
+        <div class="text-xs text-zinc-500">Featured Projects</div>
+      </div>
+      <div class="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4">
+        <div class="text-2xl font-bold">C++ · React</div>
+        <div class="text-xs text-zinc-500">Core Stack</div>
+      </div>
+      <div class="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4">
+        <div class="text-2xl font-bold">WSU</div>
+        <div class="text-xs text-zinc-500">AWS Cloud Club</div>
+      </div>
+      <div class="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4">
+        <div class="text-2xl font-bold">2026</div>
+        <div class="text-xs text-zinc-500">Grad Target</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="py-14 border-t border-zinc-200/70 dark:border-zinc-800">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-2xl font-bold">Projects</h2>
+      <p class="mt-1 text-zinc-600 dark:text-zinc-300">A few things I’ve built recently.</p>
+
+      <div class="mt-6 grid sm:grid-cols-2 gap-6">
+        <!-- Intern Guide -->
+        <article class="group overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 hover:shadow-xl hover:lift transition">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="Intern Guide" class="h-40 w-full object-cover">
+          <div class="p-5">
+            <div class="flex items-center gap-2 text-xs text-zinc-500">
+              <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800">React</span>
+              <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800">Supabase</span>
+            </div>
+            <h3 class="mt-3 text-lg font-semibold">Intern Guide</h3>
+            <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-300">
+              AI-assisted internship planner that helps students map career goals from résumé uploads and AI insights.
+            </p>
+            <div class="mt-3 flex gap-3">
+              <a class="text-accent font-medium hover:underline" href="https://github.com/WSU-4110/InternGuide" target="_blank">Repo</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- University Chat App -->
+        <article class="group overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 hover:shadow-xl hover:lift transition">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop" alt="Chat App" class="h-40 w-full object-cover">
+          <div class="p-5">
+            <div class="flex items-center gap-2 text-xs text-zinc-500">
+              <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800">React</span>
+              <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800">Firebase</span>
+            </div>
+            <h3 class="mt-3 text-lg font-semibold">University Chat App</h3>
+            <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-300">
+              Real-time anonymous student chat app with Firebase Auth, Firestore, and smooth dark mode UI.
+            </p>
+            <div class="mt-3 flex gap-3">
+              <a class="text-accent font-medium hover:underline" href="https://github.com/elykap/Uni-Chat-App" target="_blank">Repo</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Library Management System -->
+        <article class="group overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 hover:shadow-xl hover:lift transition">
+          <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1200&auto=format&fit=crop" alt="Library System" class="h-40 w-full object-cover">
+          <div class="p-5">
+            <div class="flex items-center gap-2 text-xs text-zinc-500">
+              <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800">C++</span>
+              <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800">OOP</span>
+            </div>
+            <h3 class="mt-3 text-lg font-semibold">Library Management System</h3>
+            <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-300">
+              Object-oriented library system in C++ with persistent file storage, modular design, and unit testing.
+            </p>
+            <div class="mt-3 flex gap-3">
+              <a class="text-accent font-medium hover:underline" href="https://github.com/elykap/LibManagementSystem" target="_blank">Repo</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-14 border-t border-zinc-200/70 dark:border-zinc-800">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-2xl font-bold">About</h2>
+      <p class="mt-3 max-w-3xl text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        I’m a CS senior at Wayne State University who enjoys building practical tools with clean, scalable code. 
+        I work across the stack — React on the front, Firebase/Supabase on the back — and keep sharpening my fundamentals in C++ and algorithms.
+        I’m currently a member of the AWS Cloud Club and open to Summer 2026 SWE internships.
+      </p>
+
+      <!-- SKILLS GRID -->
+      <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+        <div class="flex items-center gap-2 rounded-lg border border-zinc-200 dark:border-zinc-800 px-3 py-2">
+          <span>🟦</span><span class="text-sm">C++ / OOP</span>
+        </div>
+        <div class="flex items-center gap-2 rounded-lg border border-zinc-200 dark:border-zinc-800 px-3 py-2">
+          <span>⚛️</span><span class="text-sm">React</span>
+        </div>
+        <div class="flex items-center gap-2 rounded-lg border border-zinc-200 dark:border-zinc-800 px-3 py-2">
+          <span>🔥</span><span class="text-sm">Firebase</span>
+        </div>
+        <div class="flex items-center gap-2 rounded-lg border border-zinc-200 dark:border-zinc-800 px-3 py-2">
+          <span>🗄️</span><span class="text-sm">Supabase</span>
+        </div>
+        <div class="flex items-center gap-2 rounded-lg border border-zinc-200 dark:border-zinc-800 px-3 py-2">
+          <span>🧮</span><span class="text-sm">Data Structures & Algorithms</span>
+        </div>
+        <div class="flex items-center gap-2 rounded-lg border border-zinc-200 dark:border-zinc-800 px-3 py-2">
+          <span>🎨</span><span class="text-sm">Tailwind</span>
+        </div>
+        <div class="flex items-center gap-2 rounded-lg border border-zinc-200 dark:border-zinc-800 px-3 py-2">
+          <span>🔧</span><span class="text-sm">Git / GitHub</span>
+        </div>
+        <div class="flex items-center gap-2 rounded-lg border border-zinc-200 dark:border-zinc-800 px-3 py-2">
+          <span>☁️</span><span class="text-sm">AWS Club</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-14 border-t border-zinc-200/70 dark:border-zinc-800">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-2xl font-bold">Contact</h2>
+      <div class="mt-3 text-zinc-700 dark:text-zinc-300">
+        <p>Email: <a class="text-accent hover:underline" href="mailto:pootakyle@gmail.com">pootakyle@gmail.com</a></p>
+        <p class="mt-1">LinkedIn: <a class="text-accent hover:underline" href="https://linkedin.com/in/kylepoota" target="_blank">linkedin.com/in/kylepoota</a></p>
+        <p class="mt-1">GitHub: <a class="text-accent hover:underline" href="https://github.com/elykap" target="_blank">github.com/elykap</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-6 border-t border-zinc-200/70 dark:border-zinc-800">
+    <div class="max-w-5xl mx-auto px-4 text-sm text-zinc-500 dark:text-zinc-400">
+      © <span id="year"></span> Kyle Poota. All rights reserved.
+    </div>
   </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function setTheme(next) {
+      if (next === 'dark') document.documentElement.classList.add('dark');
+      else document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', next);
+      const label = (next === 'dark') ? 'Light' : 'Dark';
+      const btn = document.getElementById('themeLabel');
+      const btnM = document.getElementById('themeLabelMobile');
+      if (btn) btn.textContent = label;
+      if (btnM) btnM.textContent = label;
+    }
+    document.getElementById('themeBtn')?.addEventListener('click', () => {
+      const dark = document.documentElement.classList.contains('dark');
+      setTheme(dark ? 'light' : 'dark');
+    });
+    document.getElementById('themeBtnMobile')?.addEventListener('click', () => {
+      const dark = document.documentElement.classList.contains('dark');
+      setTheme(dark ? 'light' : 'dark');
+    });
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+  </script>
 </body>
-
 </html>
-
-
