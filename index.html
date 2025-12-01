@@ -52,10 +52,9 @@
         <a href="#about" class="hover:text-accent">About</a>
         <a href="#contact" class="hover:text-accent">Contact</a>
         <a href="https://github.com/elykap/elykap.github.io/releases/latest/download/Kyle_Poota_Resume.pdf"
-           class="px-3 py-1.5 rounded-md bg-accent text-white hover:opacity-90"
-           target="_blank" rel="noopener">Resume</a>
+           class="px-3 py-1.5 rounded-md bg-accent text-white hover:opacity-90 js-resume-link">Resume</a>
         <button id="themeBtn" class="ml-2 rounded-md px-2 py-1 border border-zinc-300 dark:border-zinc-700 text-xs">
-          <span id="themeLabel">Dark</span>
+          <span id="themeLabel">🌙</span>
         </button>
       </nav>
       <button id="menuBtn" class="sm:hidden p-2 text-zinc-600 dark:text-zinc-300" aria-label="Menu">☰</button>
@@ -75,8 +74,7 @@
       <div class="mt-6 flex flex-wrap gap-3">
         <a href="#projects" class="px-4 py-2 rounded-md bg-accent text-white hover:opacity-90">See Projects</a>
         <a href="https://github.com/elykap/elykap.github.io/releases/latest/download/Kyle_Poota_Resume.pdf"
-           class="px-4 py-2 rounded-md border border-zinc-300 dark:border-zinc-700"
-           target="_blank" rel="noopener">View Resume</a>
+           class="px-4 py-2 rounded-md border border-zinc-300 dark:border-zinc-700 js-resume-link">View Resume</a>
         <a href="https://github.com/elykap" target="_blank" class="px-4 py-2 rounded-md border border-zinc-300 dark:border-zinc-700">GitHub</a>
         <a href="https://linkedin.com/in/kylepoota" target="_blank" class="px-4 py-2 rounded-md border border-zinc-300 dark:border-zinc-700">LinkedIn</a>
       </div>
@@ -87,7 +85,7 @@
   <section class="py-8 border-t border-zinc-200/70 dark:border-zinc-800">
     <div class="max-w-5xl mx-auto px-4 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
       <div class="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4">
-        <div class="text-2xl font-bold">3</div>
+        <div class="text-2xl font-bold">4</div>
         <div class="text-xs text-zinc-500">Featured Projects</div>
       </div>
       <div class="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4">
@@ -112,9 +110,25 @@
       <p class="mt-1 text-zinc-600 dark:text-zinc-300">A few things I’ve built recently.</p>
 
       <div class="mt-6 grid sm:grid-cols-2 gap-6">
+        <!-- Cyclo.ai -->
+        <article class="group overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 hover:shadow-xl hover:lift transition">
+          <div class="p-5">
+            <div class="flex items-center gap-2 text-xs text-zinc-500">
+              <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800">IBM watsonx</span>
+              <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800">Hackathon</span>
+            </div>
+            <h3 class="mt-3 text-lg font-semibold">Cyclo.ai</h3>
+            <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-300">
+              AI-powered business intelligence for small businesses: upload sales, inventory, and docs to get trends, low-stock alerts, marketing/ad recommendations, and Q&A via Cyclo Bot (built with watsonx for the IBM hackathon).
+            </p>
+            <div class="mt-3 flex gap-3">
+              <a class="text-accent font-medium hover:underline" href="https://github.com/elykap/Cyclo.ai" target="_blank">Repo</a>
+            </div>
+          </div>
+        </article>
+
         <!-- Intern Guide -->
         <article class="group overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 hover:shadow-xl hover:lift transition">
-          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="Intern Guide" class="h-40 w-full object-cover">
           <div class="p-5">
             <div class="flex items-center gap-2 text-xs text-zinc-500">
               <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800">React</span>
@@ -132,7 +146,6 @@
 
         <!-- University Chat App -->
         <article class="group overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 hover:shadow-xl hover:lift transition">
-          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop" alt="Chat App" class="h-40 w-full object-cover">
           <div class="p-5">
             <div class="flex items-center gap-2 text-xs text-zinc-500">
               <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800">React</span>
@@ -150,7 +163,6 @@
 
         <!-- Library Management System -->
         <article class="group overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 hover:shadow-xl hover:lift transition">
-          <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1200&auto=format&fit=crop" alt="Library System" class="h-40 w-full object-cover">
           <div class="p-5">
             <div class="flex items-center gap-2 text-xs text-zinc-500">
               <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800">C++</span>
@@ -221,6 +233,20 @@
     </div>
   </section>
 
+  <!-- RESUME MODAL -->
+  <div id="resumeModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 hidden z-50" role="dialog" aria-modal="true" aria-labelledby="resumeTitle">
+    <div class="relative w-full max-w-5xl h-[80vh] bg-white dark:bg-zinc-900 rounded-2xl shadow-2xl border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col">
+      <button id="resumeClose" class="absolute top-3 right-3 text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-200 text-xl" aria-label="Close resume viewer">×</button>
+      <div class="flex-1">
+        <iframe id="resumeFrame" title="Resume PDF" class="w-full h-full border-0 bg-white dark:bg-zinc-900"></iframe>
+      </div>
+      <div id="resumeStatus" class="px-4 py-2 text-sm text-zinc-500 dark:text-zinc-400 hidden">Loading…</div>
+      <div class="p-3 flex justify-end">
+        <a id="resumeDownload" class="px-4 py-2 rounded-md bg-accent text-white hover:opacity-90" download="Kyle_Poota_Resume.pdf">Download</a>
+      </div>
+    </div>
+  </div>
+
   <footer class="py-6 border-t border-zinc-200/70 dark:border-zinc-800">
     <div class="max-w-5xl mx-auto px-4 text-sm text-zinc-500 dark:text-zinc-400">
       © <span id="year"></span> Kyle Poota. All rights reserved.
@@ -233,7 +259,11 @@
       if (next === 'dark') document.documentElement.classList.add('dark');
       else document.documentElement.classList.remove('dark');
       localStorage.setItem('theme', next);
-      const label = (next === 'dark') ? 'Light' : 'Dark';
+      updateThemeLabel();
+    }
+    function updateThemeLabel() {
+      const dark = document.documentElement.classList.contains('dark');
+      const label = dark ? '☀️' : '🌙';
       const btn = document.getElementById('themeLabel');
       const btnM = document.getElementById('themeLabelMobile');
       if (btn) btn.textContent = label;
@@ -250,6 +280,64 @@
     const menuBtn = document.getElementById('menuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
     menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+    // In-page resume viewer overlay (force inline view via Google Docs viewer to avoid auto-download)
+    const resumeAssetUrl = 'https://github.com/elykap/elykap.github.io/releases/latest/download/Kyle_Poota_Resume.pdf';
+    let resumeBlobUrl = null;
+    const modal = document.getElementById('resumeModal');
+    const frame = document.getElementById('resumeFrame');
+    const closeBtn = document.getElementById('resumeClose');
+    const downloadBtn = document.getElementById('resumeDownload');
+    const statusEl = document.getElementById('resumeStatus');
+    function showStatus(text) {
+      if (!statusEl) return;
+      statusEl.textContent = text;
+      statusEl.classList.remove('hidden');
+    }
+    function hideStatus() {
+      statusEl?.classList.add('hidden');
+    }
+    async function openResume() {
+      modal.classList.remove('hidden');
+      if (resumeBlobUrl) {
+        frame.src = resumeBlobUrl;
+        downloadBtn.href = resumeBlobUrl;
+        hideStatus();
+        return;
+      }
+      showStatus('Loading resume...');
+      frame.src = 'about:blank';
+      try {
+        const res = await fetch(resumeAssetUrl);
+        if (!res.ok) throw new Error('Network error');
+        const blob = await res.blob();
+        resumeBlobUrl = URL.createObjectURL(blob);
+        frame.src = resumeBlobUrl;
+        downloadBtn.href = resumeBlobUrl;
+        hideStatus();
+      } catch (err) {
+        frame.src = 'about:blank';
+        downloadBtn.href = resumeAssetUrl;
+        showStatus('Unable to preview inline. You can still download below.');
+      }
+    }
+    function closeResume() {
+      modal.classList.add('hidden');
+    }
+    document.querySelectorAll('.js-resume-link').forEach(link => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        openResume();
+      });
+    });
+    closeBtn?.addEventListener('click', closeResume);
+    modal?.addEventListener('click', (e) => {
+      if (e.target === modal) closeResume();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeResume();
+    });
+    updateThemeLabel();
   </script>
 </body>
 </html>
