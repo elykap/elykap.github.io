@@ -1,343 +1,427 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kyle Poota — Software Engineering Student</title>
 
-  <meta name="description" content="Kyle Poota — CS senior at Wayne State. Full-stack projects with React, Firebase, Supabase, and C++." />
-  <meta property="og:title" content="Kyle Poota — Software Engineering Student" />
-  <meta property="og:description" content="Full-stack projects with React, Firebase, Supabase, and C++." />
+  <title>Kyle Poota | Software Engineer</title>
+  <meta name="description" content="Software engineer with production experience in C#, React, TypeScript, SQL, Docker, enterprise microservices, AI-enabled document processing, testing, and full-stack development." />
+  <meta name="author" content="Kyle Poota" />
+  <meta name="theme-color" content="#123B67" />
+  <link rel="canonical" href="https://kylepoota.com/" />
+
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://kylepoota.com" />
-  <meta property="og:image" content="https://kylepoota.com/og-preview.png" />
+  <meta property="og:site_name" content="Kyle Poota" />
+  <meta property="og:title" content="Kyle Poota | Software Engineer" />
+  <meta property="og:description" content="Software engineer with production experience in C#, React, TypeScript, SQL, Docker, enterprise microservices, AI-enabled document processing, and full-stack development." />
+  <meta property="og:url" content="https://kylepoota.com/" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Kyle Poota | Software Engineer" />
+  <meta name="twitter:description" content="Software engineer with production experience in C#, React, TypeScript, SQL, Docker, enterprise microservices, AI-enabled document processing, and full-stack development." />
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: { colors: { accent: '#004AAD' } },
-        fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] }
-      },
-      darkMode: 'class'
-    }
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Kyle Poota",
+    "url": "https://kylepoota.com/",
+    "email": "mailto:pootakyle@gmail.com",
+    "jobTitle": "Software Engineer",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Farmington Hills",
+      "addressRegion": "MI",
+      "addressCountry": "US"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Wayne State University"
+    },
+    "knowsAbout": ["C#", "React", "TypeScript", "SQL", "Docker", "Microservices", "AI-enabled document processing", "Automated testing", "Observability"],
+    "sameAs": [
+      "https://github.com/elykap",
+      "https://linkedin.com/in/kylepoota"
+    ]
+  }
   </script>
-
-  <script>
-    const theme = localStorage.getItem('theme');
-    if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark');
-    }
-  </script>
-
-  <link rel="icon" href="/favicon.ico" />
-  <style>
-    .hero-bg {
-      background: radial-gradient(1200px 600px at 20% -20%, rgba(0,74,173,0.25), transparent 60%),
-                  radial-gradient(1000px 600px at 80% -20%, rgba(0,74,173,0.18), transparent 60%);
-    }
-    .hover\:lift:hover { transform: translateY(-3px); }
-  </style>
 </head>
-<body class="bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <!-- NAV -->
-  <header class="sticky top-0 z-50 backdrop-blur bg-white/70 dark:bg-zinc-950/70 border-b border-zinc-200/60 dark:border-zinc-800">
-    <div class="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
-      <a href="#" class="font-semibold tracking-tight">kylepoota.com</a>
-      <nav class="hidden sm:flex items-center gap-6 text-sm">
-        <a href="#projects" class="hover:text-accent">Projects</a>
-        <a href="#about" class="hover:text-accent">About</a>
-        <a href="#contact" class="hover:text-accent">Contact</a>
-        <a href="https://github.com/elykap/elykap.github.io/releases/latest/download/Kyle_Poota_Resume.pdf"
-           class="px-3 py-1.5 rounded-md bg-accent text-white hover:opacity-90 js-resume-link">Resume</a>
-        <button id="themeBtn" class="ml-2 rounded-md px-2 py-1 border border-zinc-300 dark:border-zinc-700 text-xs">
-          <span id="themeLabel">🌙</span>
-        </button>
+  <header class="site-header" id="top">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Kyle Poota — back to top">
+        <span class="brand-mark" aria-hidden="true">KP</span>
+        <span class="brand-name">Kyle Poota</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <ul>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a class="btn btn-primary btn-sm" href="https://github.com/elykap/elykap.github.io/releases/latest/download/Kyle_Poota_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
       </nav>
-      <button id="menuBtn" class="sm:hidden p-2 text-zinc-600 dark:text-zinc-300" aria-label="Menu">☰</button>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="menu-bar" aria-hidden="true"></span>
+        <span class="menu-bar" aria-hidden="true"></span>
+        <span class="menu-bar" aria-hidden="true"></span>
+      </button>
     </div>
+
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile" hidden>
+      <ul>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="btn btn-primary" href="https://github.com/elykap/elykap.github.io/releases/latest/download/Kyle_Poota_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- HERO -->
-  <section class="hero-bg">
-    <div class="max-w-5xl mx-auto px-4 py-16 sm:py-24">
-      <p class="text-sm uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">Wayne State University • Detroit, MI</p>
-      <h1 class="mt-3 text-4xl sm:text-5xl font-extrabold leading-tight">
-        Hi, I’m <span class="text-accent">Kyle</span> — I build full-stack apps and backends with React, Firebase, Supabase, and C++.
-      </h1>
-      <p class="mt-4 max-w-2xl text-zinc-600 dark:text-zinc-300">
-        CS senior focused on practical tools and clean architectures. Currently shipping <strong>Intern Guide</strong> (AI-assisted internship planner) with a 5-person team.
-      </p>
-      <div class="mt-6 flex flex-wrap gap-3">
-        <a href="#projects" class="px-4 py-2 rounded-md bg-accent text-white hover:opacity-90">See Projects</a>
-        <a href="https://github.com/elykap/elykap.github.io/releases/latest/download/Kyle_Poota_Resume.pdf"
-           class="px-4 py-2 rounded-md border border-zinc-300 dark:border-zinc-700 js-resume-link">View Resume</a>
-        <a href="https://github.com/elykap" target="_blank" class="px-4 py-2 rounded-md border border-zinc-300 dark:border-zinc-700">GitHub</a>
-        <a href="https://linkedin.com/in/kylepoota" target="_blank" class="px-4 py-2 rounded-md border border-zinc-300 dark:border-zinc-700">LinkedIn</a>
-      </div>
-    </div>
-  </section>
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Software Engineer <span aria-hidden="true">•</span> Farmington Hills, Michigan</p>
+          <h1 id="hero-heading">I build production software across frontend, backend, and data systems.</h1>
+          <p class="lead">
+            Software engineer with production experience building enterprise applications using C#, React,
+            TypeScript, SQL, and Docker. Experienced developing AI-enabled document-processing systems,
+            enterprise microservices, full-stack applications, automated testing, and observability in Agile environments.
+          </p>
+          <p class="status">
+            <span class="status-dot" aria-hidden="true"></span>
+            Graduating August 2026 <span aria-hidden="true">•</span> Open to full-time software engineering opportunities
+          </p>
 
-  <!-- QUICK STATS -->
-  <section class="py-8 border-t border-zinc-200/70 dark:border-zinc-800">
-    <div class="max-w-5xl mx-auto px-4 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
-      <div class="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4">
-        <div class="text-2xl font-bold">4</div>
-        <div class="text-xs text-zinc-500">Featured Projects</div>
-      </div>
-      <div class="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4">
-        <div class="text-2xl font-bold">C++ · React</div>
-        <div class="text-xs text-zinc-500">Core Stack</div>
-      </div>
-      <div class="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4">
-        <div class="text-2xl font-bold">WSU</div>
-        <div class="text-xs text-zinc-500">AWS Cloud Club</div>
-      </div>
-      <div class="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4">
-        <div class="text-2xl font-bold">2026</div>
-        <div class="text-xs text-zinc-500">Grad Target</div>
-      </div>
-    </div>
-  </section>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#experience">View Experience</a>
+            <a class="btn btn-outline" href="#projects">View Projects</a>
+          </div>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="py-14 border-t border-zinc-200/70 dark:border-zinc-800">
-    <div class="max-w-5xl mx-auto px-4">
-      <h2 class="text-2xl font-bold">Projects</h2>
-      <p class="mt-1 text-zinc-600 dark:text-zinc-300">A few things I’ve built recently.</p>
+          <div class="hero-links">
+            <a href="https://github.com/elykap/elykap.github.io/releases/download/resume-v3/Kyle_Poota_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+            <a href="https://github.com/elykap" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://linkedin.com/in/kylepoota" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="mailto:pootakyle@gmail.com">Email</a>
+          </div>
+        </div>
 
-      <div class="mt-6 grid sm:grid-cols-2 gap-6">
-        <!-- Cyclo.ai -->
-        <article class="group overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 hover:shadow-xl hover:lift transition">
-          <div class="p-5">
-            <div class="flex items-center gap-2 text-xs text-zinc-500">
-              <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800">IBM watsonx</span>
-              <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800">Hackathon</span>
+        <aside class="hero-panel reveal" aria-label="Focus areas">
+          <ul class="focus-list">
+            <li>
+              <span class="focus-title">Production Engineering</span>
+              <span class="focus-sub">Enterprise features shipped to production</span>
+            </li>
+            <li>
+              <span class="focus-title">Full-Stack Development</span>
+              <span class="focus-sub">Frontend, backend, and data layers</span>
+            </li>
+            <li>
+              <span class="focus-title">AI-Enabled Systems</span>
+              <span class="focus-sub">Document processing &amp; extraction</span>
+            </li>
+            <li>
+              <span class="focus-title">Quality Engineering</span>
+              <span class="focus-sub">Automated testing &amp; observability</span>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section" aria-labelledby="experience-heading">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">01 — Where I work</p>
+          <h2 id="experience-heading">Professional Experience</h2>
+        </header>
+
+        <article class="experience-card reveal">
+          <div class="experience-top">
+            <div>
+              <h3 class="experience-company">United Wholesale Mortgage <span class="muted">(UWM)</span></h3>
+              <p class="experience-role">Software Development Intern — Data &amp; AI</p>
             </div>
-            <h3 class="mt-3 text-lg font-semibold">Cyclo.ai</h3>
-            <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-300">
-              AI-powered business intelligence for small businesses: upload sales, inventory, and docs to get trends, low-stock alerts, marketing/ad recommendations, and Q&A via Cyclo Bot (built with watsonx for the IBM hackathon).
-            </p>
-            <div class="mt-3 flex gap-3">
-              <a class="text-accent font-medium hover:underline" href="https://github.com/elykap/Cyclo.ai" target="_blank">Repo</a>
+            <div class="experience-meta">
+              <span>Pontiac, MI</span>
+              <span>May 2026 – Present</span>
             </div>
           </div>
-        </article>
 
-        <!-- Intern Guide -->
-        <article class="group overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 hover:shadow-xl hover:lift transition">
-          <div class="p-5">
-            <div class="flex items-center gap-2 text-xs text-zinc-500">
-              <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800">React</span>
-              <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800">Supabase</span>
+          <p class="experience-intro">
+            Contributing to enterprise document-processing systems within UWM's Data &amp; AI organization, with work
+            spanning frontend development, backend services, databases, testing, code review, observability, and
+            production deployment.
+          </p>
+
+          <ul class="experience-points">
+            <li>Developed production features for enterprise document-processing applications using C#, React, TypeScript, SQL, and Docker.</li>
+            <li>Built functionality for Replay Extraction, an internal microservice used during service-recovery events to replay failed AI document-extraction requests and reprocess hundreds of loan documents with less manual intervention.</li>
+            <li>Contributed production code to DocHub, UWM's internal document-management platform supporting mortgage workflows and communication between document-processing microservices.</li>
+            <li>Replaced inline SQL with stored procedures, improving backend maintainability and separation of application and database logic.</li>
+            <li>Created Dynatrace dashboards monitoring service health, latency, and production errors while collaborating through Jira, Bitbucket, Agile sprints, peer reviews, testing, and production releases.</li>
+          </ul>
+
+          <ul class="chips" aria-label="Technologies used">
+            <li>C#</li>
+            <li>React</li>
+            <li>TypeScript</li>
+            <li>SQL Server</li>
+            <li>Docker</li>
+            <li>Microservices</li>
+            <li>Dynatrace</li>
+            <li>Jira</li>
+            <li>Bitbucket</li>
+            <li>Agile</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section section-alt" aria-labelledby="projects-heading">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">02 — Selected work</p>
+          <h2 id="projects-heading">Selected Projects</h2>
+        </header>
+
+        <div class="project-grid">
+          <!-- Course Management System -->
+          <article class="project-card reveal">
+            <div class="project-body">
+              <p class="project-label">Senior Capstone <span aria-hidden="true">•</span> QA Lead</p>
+              <h3 class="project-title">Course Management System</h3>
+              <p class="project-desc">
+                A course management platform developed by a five-member Agile team for instructor and GTA workflows,
+                with secure authentication, role-based access, realtime dashboard updates, AI-generated summaries,
+                testing infrastructure, and document exports.
+              </p>
+              <ul class="project-highlights">
+                <li>QA Lead for a five-member Agile team; 25+ pull requests</li>
+                <li>Helped maintain ~50 automated Jest tests</li>
+                <li>Built &amp; tested auth, RBAC, realtime updates, SQL, and UI</li>
+                <li>Authored unit, integration, smoke, and UAT tests with traceability matrices</li>
+                <li>Integrated secure server-side Gemini summarization; PDF/Excel exports</li>
+              </ul>
+              <ul class="chips" aria-label="Technologies used">
+                <li>Next.js</li>
+                <li>React</li>
+                <li>TypeScript</li>
+                <li>PostgreSQL</li>
+                <li>Supabase</li>
+                <li>Gemini API</li>
+                <li>Jest</li>
+                <li>GitHub Actions</li>
+                <li>Vercel</li>
+              </ul>
             </div>
-            <h3 class="mt-3 text-lg font-semibold">Intern Guide</h3>
-            <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-300">
-              AI-assisted internship planner that helps students map career goals from résumé uploads and AI insights.
+            <p class="project-note">University capstone — repository access may be restricted.</p>
+          </article>
+
+          <!-- WayneChat -->
+          <article class="project-card reveal">
+            <div class="project-body">
+              <p class="project-label">Full-Stack Web App</p>
+              <h3 class="project-title">WayneChat</h3>
+              <p class="project-desc">
+                A verified-anonymous university community platform with authentication, profiles, communities, posts,
+                replies, search, moderation reports, and realtime updates.
+              </p>
+              <ul class="chips" aria-label="Technologies used">
+                <li>React</li>
+                <li>Supabase</li>
+                <li>PostgreSQL</li>
+                <li>Realtime</li>
+                <li>Vercel</li>
+              </ul>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/elykap/WayneChat" target="_blank" rel="noopener noreferrer">
+                Repository <span class="ext" aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Cyclo.ai -->
+          <article class="project-card reveal">
+            <div class="project-body">
+              <p class="project-label">IBM watsonx 24-Hour Hackathon</p>
+              <h3 class="project-title">Cyclo.ai</h3>
+              <p class="project-desc">
+                An AI-powered business intelligence prototype for small businesses that analyzes uploaded sales,
+                inventory, and document data to surface trends, low-stock alerts, marketing recommendations, and
+                conversational Q&amp;A through Cyclo Bot.
+              </p>
+              <p class="project-desc project-desc-sub">Built in 24 hours with one software developer and one business teammate.</p>
+              <ul class="chips" aria-label="Technologies used">
+                <li>AI / LLM</li>
+                <li>Business Intelligence</li>
+                <li>Prototype</li>
+                <li>IBM watsonx</li>
+              </ul>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/elykap/Cyclo.ai" target="_blank" rel="noopener noreferrer">
+                Repository <span class="ext" aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <p class="additional-work reveal">
+          Additional work: <strong>Intern Guide</strong> — an AI-assisted internship planner built with a student team.
+        </p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section" aria-labelledby="skills-heading">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">03 — Toolbox</p>
+          <h2 id="skills-heading">Technical Skills</h2>
+        </header>
+
+        <div class="skills-grid">
+          <div class="skill-group reveal">
+            <h3>Languages</h3>
+            <ul class="chips">
+              <li>C#</li><li>TypeScript</li><li>JavaScript</li><li>Python</li>
+              <li>SQL</li><li>Java</li><li>C++</li><li>HTML/CSS</li>
+            </ul>
+          </div>
+
+          <div class="skill-group reveal">
+            <h3>Frameworks &amp; Testing</h3>
+            <ul class="chips">
+              <li>React</li><li>Next.js</li><li>.NET</li>
+              <li>Tailwind CSS</li><li>Jest</li><li>React Testing Library</li>
+            </ul>
+          </div>
+
+          <div class="skill-group reveal">
+            <h3>Databases &amp; Services</h3>
+            <ul class="chips">
+              <li>SQL Server</li><li>PostgreSQL</li><li>Supabase</li>
+              <li>Firebase</li><li>Google Gemini API</li><li>Brevo</li>
+            </ul>
+          </div>
+
+          <div class="skill-group reveal">
+            <h3>Tools</h3>
+            <ul class="chips">
+              <li>Git</li><li>GitHub</li><li>Bitbucket</li><li>Docker</li>
+              <li>Dynatrace</li><li>Jira</li><li>GitHub Actions</li>
+              <li>Vercel</li><li>Visual Studio</li><li>VS Code</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT / EDUCATION -->
+    <section id="about" class="section section-alt" aria-labelledby="about-heading">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">04 — Background</p>
+          <h2 id="about-heading">About &amp; Education</h2>
+        </header>
+
+        <div class="about-grid">
+          <div class="about-copy reveal">
+            <p>
+              I am a Computer Science senior at Wayne State University graduating in August 2026, with a minor in
+              Business Administration. My experience spans enterprise software development, AI-enabled document
+              processing, full-stack applications, testing strategy, CI/CD, observability, and Agile collaboration.
+              I enjoy working across the stack, with a particular interest in building intuitive user-facing software
+              backed by reliable systems.
             </p>
-            <div class="mt-3 flex gap-3">
-              <a class="text-accent font-medium hover:underline" href="https://github.com/WSU-4110/InternGuide" target="_blank">Repo</a>
+
+            <div class="additional-role">
+              <h3>Additional Experience</h3>
+              <p>
+                <span class="role-name">Elite Parking Solutions</span> — Valet &amp; Traffic Direction Specialist
+                <span class="muted">· July 2023 – May 2026</span>
+              </p>
             </div>
           </div>
-        </article>
 
-        <!-- University Chat App -->
-        <article class="group overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 hover:shadow-xl hover:lift transition">
-          <div class="p-5">
-            <div class="flex items-center gap-2 text-xs text-zinc-500">
-              <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800">React</span>
-              <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800">Firebase</span>
-            </div>
-            <h3 class="mt-3 text-lg font-semibold">University Chat App</h3>
-            <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-300">
-              Real-time anonymous student chat app with Firebase Auth, Firestore, and smooth dark mode UI.
-            </p>
-            <div class="mt-3 flex gap-3">
-              <a class="text-accent font-medium hover:underline" href="https://github.com/elykap/Uni-Chat-App" target="_blank">Repo</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Library Management System -->
-        <article class="group overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 hover:shadow-xl hover:lift transition">
-          <div class="p-5">
-            <div class="flex items-center gap-2 text-xs text-zinc-500">
-              <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800">C++</span>
-              <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800">OOP</span>
-            </div>
-            <h3 class="mt-3 text-lg font-semibold">Library Management System</h3>
-            <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-300">
-              Object-oriented library system in C++ with persistent file storage, modular design, and unit testing.
-            </p>
-            <div class="mt-3 flex gap-3">
-              <a class="text-accent font-medium hover:underline" href="https://github.com/elykap/LibManagementSystem" target="_blank">Repo</a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" class="py-14 border-t border-zinc-200/70 dark:border-zinc-800">
-    <div class="max-w-5xl mx-auto px-4">
-      <h2 class="text-2xl font-bold">About</h2>
-      <p class="mt-3 max-w-3xl text-zinc-700 dark:text-zinc-300 leading-relaxed">
-        I’m a CS senior at Wayne State University who enjoys building practical tools with clean, scalable code. 
-        I work across the stack — React on the front, Firebase/Supabase on the back — and keep sharpening my fundamentals in C++ and algorithms.
-        I’m currently a member of the AWS Cloud Club and open to Summer 2026 SWE internships.
-      </p>
-
-      <!-- SKILLS GRID -->
-      <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-        <div class="flex items-center gap-2 rounded-lg border border-zinc-200 dark:border-zinc-800 px-3 py-2">
-          <span>🟦</span><span class="text-sm">C++ / OOP</span>
-        </div>
-        <div class="flex items-center gap-2 rounded-lg border border-zinc-200 dark:border-zinc-800 px-3 py-2">
-          <span>⚛️</span><span class="text-sm">React</span>
-        </div>
-        <div class="flex items-center gap-2 rounded-lg border border-zinc-200 dark:border-zinc-800 px-3 py-2">
-          <span>🔥</span><span class="text-sm">Firebase</span>
-        </div>
-        <div class="flex items-center gap-2 rounded-lg border border-zinc-200 dark:border-zinc-800 px-3 py-2">
-          <span>🗄️</span><span class="text-sm">Supabase</span>
-        </div>
-        <div class="flex items-center gap-2 rounded-lg border border-zinc-200 dark:border-zinc-800 px-3 py-2">
-          <span>🧮</span><span class="text-sm">Data Structures & Algorithms</span>
-        </div>
-        <div class="flex items-center gap-2 rounded-lg border border-zinc-200 dark:border-zinc-800 px-3 py-2">
-          <span>🎨</span><span class="text-sm">Tailwind</span>
-        </div>
-        <div class="flex items-center gap-2 rounded-lg border border-zinc-200 dark:border-zinc-800 px-3 py-2">
-          <span>🔧</span><span class="text-sm">Git / GitHub</span>
-        </div>
-        <div class="flex items-center gap-2 rounded-lg border border-zinc-200 dark:border-zinc-800 px-3 py-2">
-          <span>☁️</span><span class="text-sm">AWS Club</span>
+          <aside class="education-card reveal" aria-label="Education">
+            <h3>Wayne State University</h3>
+            <p class="education-degree">B.S. in Computer Science</p>
+            <p class="education-minor">Minor in Business Administration</p>
+            <p class="education-grad">Graduation: August 2026</p>
+            <ul class="education-facts">
+              <li>GPA: 3.6 overall</li>
+              <li>Business minor GPA: 4.0</li>
+              <li>Dean's List: 3 semesters</li>
+              <li>WSU Gold Scholarship recipient</li>
+            </ul>
+          </aside>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="py-14 border-t border-zinc-200/70 dark:border-zinc-800">
-    <div class="max-w-5xl mx-auto px-4">
-      <h2 class="text-2xl font-bold">Contact</h2>
-      <div class="mt-3 text-zinc-700 dark:text-zinc-300">
-        <p>Email: <a class="text-accent hover:underline" href="mailto:pootakyle@gmail.com">pootakyle@gmail.com</a></p>
-        <p class="mt-1">LinkedIn: <a class="text-accent hover:underline" href="https://linkedin.com/in/kylepoota" target="_blank">linkedin.com/in/kylepoota</a></p>
-        <p class="mt-1">GitHub: <a class="text-accent hover:underline" href="https://github.com/elykap" target="_blank">github.com/elykap</a></p>
-      </div>
-    </div>
-  </section>
+    <!-- CONTACT -->
+    <section id="contact" class="section" aria-labelledby="contact-heading">
+      <div class="container contact">
+        <header class="section-head reveal">
+          <p class="section-kicker">05 — Get in touch</p>
+          <h2 id="contact-heading">Let's build something useful.</h2>
+        </header>
 
-  <!-- RESUME MODAL -->
-  <div id="resumeModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 hidden z-50" role="dialog" aria-modal="true" aria-labelledby="resumeTitle">
-    <div class="relative w-full max-w-5xl h-[80vh] bg-white dark:bg-zinc-900 rounded-2xl shadow-2xl border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col">
-      <button id="resumeClose" class="absolute top-3 right-3 text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-200 text-xl" aria-label="Close resume viewer">×</button>
-      <div class="flex-1">
-        <iframe id="resumeFrame" title="Resume PDF" class="w-full h-full border-0 bg-white dark:bg-zinc-900"></iframe>
-      </div>
-      <div id="resumeStatus" class="px-4 py-2 text-sm text-zinc-500 dark:text-zinc-400 hidden">Loading…</div>
-      <div class="p-3 flex justify-end">
-        <a id="resumeDownload" class="px-4 py-2 rounded-md bg-accent text-white hover:opacity-90" download="Kyle_Poota_Resume.pdf">Download</a>
-      </div>
-    </div>
-  </div>
+        <p class="contact-lead reveal">
+          I am currently preparing for full-time software engineering opportunities beginning after graduation in
+          August 2026.
+        </p>
 
-  <footer class="py-6 border-t border-zinc-200/70 dark:border-zinc-800">
-    <div class="max-w-5xl mx-auto px-4 text-sm text-zinc-500 dark:text-zinc-400">
-      © <span id="year"></span> Kyle Poota. All rights reserved.
+        <div class="contact-actions reveal">
+          <a class="btn btn-primary" href="mailto:pootakyle@gmail.com">Email me</a>
+          <a class="btn btn-outline" href="https://github.com/elykap/elykap.github.io/releases/latest/download/Kyle_Poota_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+        </div>
+
+        <ul class="contact-list reveal">
+          <li><span class="contact-key">Email</span><a href="mailto:pootakyle@gmail.com">pootakyle@gmail.com</a></li>
+          <li><span class="contact-key">LinkedIn</span><a href="https://linkedin.com/in/kylepoota" target="_blank" rel="noopener noreferrer">linkedin.com/in/kylepoota</a></li>
+          <li><span class="contact-key">GitHub</span><a href="https://github.com/elykap" target="_blank" rel="noopener noreferrer">github.com/elykap</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-name">Kyle Poota</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/elykap" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://linkedin.com/in/kylepoota" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="mailto:pootakyle@gmail.com">Email</a></li>
+      </ul>
+      <p class="footer-copy">© <span id="year">2026</span> Kyle Poota</p>
     </div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    function setTheme(next) {
-      if (next === 'dark') document.documentElement.classList.add('dark');
-      else document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', next);
-      updateThemeLabel();
-    }
-    function updateThemeLabel() {
-      const dark = document.documentElement.classList.contains('dark');
-      const label = dark ? '☀️' : '🌙';
-      const btn = document.getElementById('themeLabel');
-      const btnM = document.getElementById('themeLabelMobile');
-      if (btn) btn.textContent = label;
-      if (btnM) btnM.textContent = label;
-    }
-    document.getElementById('themeBtn')?.addEventListener('click', () => {
-      const dark = document.documentElement.classList.contains('dark');
-      setTheme(dark ? 'light' : 'dark');
-    });
-    document.getElementById('themeBtnMobile')?.addEventListener('click', () => {
-      const dark = document.documentElement.classList.contains('dark');
-      setTheme(dark ? 'light' : 'dark');
-    });
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-
-    // In-page resume viewer overlay (force inline view via Google Docs viewer to avoid auto-download)
-    const resumeAssetUrl = 'https://github.com/elykap/elykap.github.io/releases/latest/download/Kyle_Poota_Resume.pdf';
-    let resumeBlobUrl = null;
-    const modal = document.getElementById('resumeModal');
-    const frame = document.getElementById('resumeFrame');
-    const closeBtn = document.getElementById('resumeClose');
-    const downloadBtn = document.getElementById('resumeDownload');
-    const statusEl = document.getElementById('resumeStatus');
-    function showStatus(text) {
-      if (!statusEl) return;
-      statusEl.textContent = text;
-      statusEl.classList.remove('hidden');
-    }
-    function hideStatus() {
-      statusEl?.classList.add('hidden');
-    }
-    async function openResume() {
-      modal.classList.remove('hidden');
-      if (resumeBlobUrl) {
-        frame.src = resumeBlobUrl;
-        downloadBtn.href = resumeBlobUrl;
-        hideStatus();
-        return;
-      }
-      showStatus('Loading resume...');
-      frame.src = 'about:blank';
-      try {
-        const res = await fetch(resumeAssetUrl);
-        if (!res.ok) throw new Error('Network error');
-        const blob = await res.blob();
-        resumeBlobUrl = URL.createObjectURL(blob);
-        frame.src = resumeBlobUrl;
-        downloadBtn.href = resumeBlobUrl;
-        hideStatus();
-      } catch (err) {
-        frame.src = 'about:blank';
-        downloadBtn.href = resumeAssetUrl;
-        showStatus('Unable to preview inline. You can still download below.');
-      }
-    }
-    function closeResume() {
-      modal.classList.add('hidden');
-    }
-    document.querySelectorAll('.js-resume-link').forEach(link => {
-      link.addEventListener('click', (event) => {
-        event.preventDefault();
-        openResume();
-      });
-    });
-    closeBtn?.addEventListener('click', closeResume);
-    modal?.addEventListener('click', (e) => {
-      if (e.target === modal) closeResume();
-    });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeResume();
-    });
-    updateThemeLabel();
-  </script>
+  <script src="script.js" defer></script>
 </body>
 </html>
