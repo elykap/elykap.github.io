@@ -5,26 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Kyle Poota | Software Engineer</title>
-  <meta name="description" content="Software engineer with production experience in C#, React, TypeScript, SQL, Docker, enterprise microservices, AI-enabled document processing, testing, and full-stack development." />
+  <meta name="description" content="Software engineer with production experience in C#, React, TypeScript, SQL, Docker, and AI-enabled document processing." />
   <meta name="author" content="Kyle Poota" />
-  <meta name="theme-color" content="#123B67" />
+  <meta name="theme-color" content="#f0f2f4" />
   <link rel="canonical" href="https://kylepoota.com/" />
+
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem("theme");
+        var theme = stored === "light" || stored === "dark"
+          ? stored
+          : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+        document.querySelector('meta[name="theme-color"]')
+          ?.setAttribute("content", theme === "dark" ? "#12161c" : "#f0f2f4");
+      } catch (e) {}
+    })();
+  </script>
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Kyle Poota" />
   <meta property="og:title" content="Kyle Poota | Software Engineer" />
-  <meta property="og:description" content="Software engineer with production experience in C#, React, TypeScript, SQL, Docker, enterprise microservices, AI-enabled document processing, and full-stack development." />
+  <meta property="og:description" content="Software engineer with production experience in C#, React, TypeScript, SQL, Docker, and AI-enabled document processing." />
   <meta property="og:url" content="https://kylepoota.com/" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Kyle Poota | Software Engineer" />
-  <meta name="twitter:description" content="Software engineer with production experience in C#, React, TypeScript, SQL, Docker, enterprise microservices, AI-enabled document processing, and full-stack development." />
+  <meta name="twitter:description" content="Software engineer with production experience in C#, React, TypeScript, SQL, Docker, and AI-enabled document processing." />
 
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
 
@@ -46,7 +60,7 @@
       "@type": "CollegeOrUniversity",
       "name": "Wayne State University"
     },
-    "knowsAbout": ["C#", "React", "TypeScript", "SQL", "Docker", "Microservices", "AI-enabled document processing", "Automated testing", "Observability"],
+    "knowsAbout": ["C#", "React", "TypeScript", "SQL", "Docker", "Microservices", "AI-enabled document processing"],
     "sameAs": [
       "https://github.com/elykap",
       "https://linkedin.com/in/kylepoota"
@@ -55,372 +69,167 @@
   </script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <!-- NAV -->
-  <header class="site-header" id="top">
-    <div class="container nav">
-      <a class="brand" href="#top" aria-label="Kyle Poota — back to top">
-        <span class="brand-mark" aria-hidden="true">KP</span>
-        <span class="brand-name">Kyle Poota</span>
-      </a>
-
-      <nav class="nav-links" aria-label="Primary">
-        <ul>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <a class="btn btn-primary btn-sm" href="https://github.com/elykap/elykap.github.io/releases/latest/download/Kyle_Poota_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="#top">Kyle Poota</a>
+      <nav aria-label="Primary">
+        <a href="#work">Work</a>
+        <a href="#projects">Projects</a>
+        <a class="nav-icon" href="mailto:pootakyle@gmail.com" aria-label="Email">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2" />
+            <path d="m3 7 9 6 9-6" />
+          </svg>
+        </a>
+        <button type="button" class="theme-toggle nav-icon" id="themeToggle" aria-label="Switch to dark theme">
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+          </svg>
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 14.5A8.5 8.5 0 0 1 9.5 3 7 7 0 1 0 21 14.5z" />
+          </svg>
+        </button>
       </nav>
-
-      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-        <span class="menu-bar" aria-hidden="true"></span>
-        <span class="menu-bar" aria-hidden="true"></span>
-        <span class="menu-bar" aria-hidden="true"></span>
-      </button>
     </div>
-
-    <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile" hidden>
-      <ul>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a class="btn btn-primary" href="https://github.com/elykap/elykap.github.io/releases/latest/download/Kyle_Poota_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
-      </ul>
-    </nav>
   </header>
 
   <main id="main">
-    <!-- HERO -->
-    <section class="hero" aria-labelledby="hero-heading">
-      <div class="container hero-grid">
-        <div class="hero-copy reveal">
-          <p class="eyebrow">Software Engineer <span aria-hidden="true">•</span> Farmington Hills, Michigan</p>
-          <h1 id="hero-heading">I build production software across frontend, backend, and data systems.</h1>
-          <p class="lead">
-            Software engineer with production experience building enterprise applications using C#, React,
-            TypeScript, SQL, and Docker. Experienced developing AI-enabled document-processing systems,
-            enterprise microservices, full-stack applications, automated testing, and observability in Agile environments.
-          </p>
-          <p class="status">
-            <span class="status-dot" aria-hidden="true"></span>
-            Graduating August 2026 <span aria-hidden="true">•</span> Open to full-time software engineering opportunities
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#experience">View Experience</a>
-            <a class="btn btn-outline" href="#projects">View Projects</a>
-          </div>
-
-          <div class="hero-links">
-            <a href="https://github.com/elykap/elykap.github.io/releases/download/resume-v3/Kyle_Poota_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
-            <a href="https://github.com/elykap" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="https://linkedin.com/in/kylepoota" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="mailto:pootakyle@gmail.com">Email</a>
-          </div>
+    <section class="hero" id="top">
+      <div class="wrap hero-inner">
+        <p class="hero-brand">Kyle Poota</p>
+        <h1>Software engineer building reliable production systems.</h1>
+        <p class="hero-lead">
+          C#, React, TypeScript, SQL, and Docker — currently at United Wholesale Mortgage
+          on AI-enabled document processing.
+        </p>
+        <div class="hero-actions">
+          <a class="link-primary js-resume-link" href="https://github.com/elykap/elykap.github.io/releases/latest/download/public_resume.pdf">Resume</a>
+          <a href="https://github.com/elykap" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://linkedin.com/in/kylepoota" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="mailto:pootakyle@gmail.com">Email</a>
         </div>
-
-        <aside class="hero-panel reveal" aria-label="Focus areas">
-          <ul class="focus-list">
-            <li>
-              <span class="focus-title">Production Engineering</span>
-              <span class="focus-sub">Enterprise features shipped to production</span>
-            </li>
-            <li>
-              <span class="focus-title">Full-Stack Development</span>
-              <span class="focus-sub">Frontend, backend, and data layers</span>
-            </li>
-            <li>
-              <span class="focus-title">AI-Enabled Systems</span>
-              <span class="focus-sub">Document processing &amp; extraction</span>
-            </li>
-            <li>
-              <span class="focus-title">Quality Engineering</span>
-              <span class="focus-sub">Automated testing &amp; observability</span>
-            </li>
-          </ul>
-        </aside>
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
-    <section id="experience" class="section" aria-labelledby="experience-heading">
-      <div class="container">
-        <header class="section-head reveal">
-          <p class="section-kicker">01 — Where I work</p>
-          <h2 id="experience-heading">Professional Experience</h2>
-        </header>
+    <section id="work" class="section">
+      <div class="wrap narrow">
+        <h2>Work</h2>
 
-        <article class="experience-card reveal">
-          <div class="experience-top">
+        <article class="entry">
+          <header class="entry-head">
             <div>
-              <h3 class="experience-company">United Wholesale Mortgage <span class="muted">(UWM)</span></h3>
-              <p class="experience-role">Software Development Intern — Data &amp; AI</p>
+              <h3>United Wholesale Mortgage</h3>
+              <p class="entry-role">Software Developer 1 — Data &amp; AI</p>
             </div>
-            <div class="experience-meta">
-              <span>Pontiac, MI</span>
-              <span>May 2026 – Present</span>
-            </div>
-          </div>
-
-          <p class="experience-intro">
-            Contributing to enterprise document-processing systems within UWM's Data &amp; AI organization, with work
-            spanning frontend development, backend services, databases, testing, code review, observability, and
-            production deployment.
-          </p>
-
-          <ul class="experience-points">
-            <li>Developed production features for enterprise document-processing applications using C#, React, TypeScript, SQL, and Docker.</li>
-            <li>Built functionality for Replay Extraction, an internal microservice used during service-recovery events to replay failed AI document-extraction requests and reprocess hundreds of loan documents with less manual intervention.</li>
-            <li>Contributed production code to DocHub, UWM's internal document-management platform supporting mortgage workflows and communication between document-processing microservices.</li>
-            <li>Replaced inline SQL with stored procedures, improving backend maintainability and separation of application and database logic.</li>
-            <li>Created Dynatrace dashboards monitoring service health, latency, and production errors while collaborating through Jira, Bitbucket, Agile sprints, peer reviews, testing, and production releases.</li>
-          </ul>
-
-          <ul class="chips" aria-label="Technologies used">
-            <li>C#</li>
-            <li>React</li>
-            <li>TypeScript</li>
-            <li>SQL Server</li>
-            <li>Docker</li>
-            <li>Microservices</li>
-            <li>Dynatrace</li>
-            <li>Jira</li>
-            <li>Bitbucket</li>
-            <li>Agile</li>
+            <p class="entry-meta">Pontiac, MI · May 2026 – Present</p>
+          </header>
+          <ul>
+            <li>Shipped production features for enterprise document-processing apps in C#, React, TypeScript, SQL, and Docker.</li>
+            <li>Built Replay Extraction, a recovery microservice that replays failed AI document-extraction requests across hundreds of loan documents.</li>
+            <li>Contributed to DocHub, UWM’s internal document-management platform connecting mortgage document microservices.</li>
+            <li>Moved inline SQL into stored procedures and added Dynatrace dashboards for latency and production errors.</li>
           </ul>
         </article>
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="section section-alt" aria-labelledby="projects-heading">
-      <div class="container">
-        <header class="section-head reveal">
-          <p class="section-kicker">02 — Selected work</p>
-          <h2 id="projects-heading">Selected Projects</h2>
-        </header>
+    <section id="projects" class="section">
+      <div class="wrap narrow">
+        <h2>Projects</h2>
 
-        <div class="project-grid">
-          <!-- Course Management System -->
-          <article class="project-card reveal">
-            <div class="project-body">
-              <p class="project-label">Senior Capstone <span aria-hidden="true">•</span> QA Lead</p>
-              <h3 class="project-title">Course Management System</h3>
-              <p class="project-desc">
-                A course management platform developed by a five-member Agile team for instructor and GTA workflows,
-                with secure authentication, role-based access, realtime dashboard updates, AI-generated summaries,
-                testing infrastructure, and document exports.
-              </p>
-              <ul class="project-highlights">
-                <li>QA Lead for a five-member Agile team; 25+ pull requests</li>
-                <li>Helped maintain ~50 automated Jest tests</li>
-                <li>Built &amp; tested auth, RBAC, realtime updates, SQL, and UI</li>
-                <li>Authored unit, integration, smoke, and UAT tests with traceability matrices</li>
-                <li>Integrated secure server-side Gemini summarization; PDF/Excel exports</li>
-              </ul>
-              <ul class="chips" aria-label="Technologies used">
-                <li>Next.js</li>
-                <li>React</li>
-                <li>TypeScript</li>
-                <li>PostgreSQL</li>
-                <li>Supabase</li>
-                <li>Gemini API</li>
-                <li>Jest</li>
-                <li>GitHub Actions</li>
-                <li>Vercel</li>
-              </ul>
+        <article class="entry">
+          <header class="entry-head">
+            <div>
+              <h3>Course Management System</h3>
+              <p class="entry-role">Senior Capstone · QA Lead</p>
             </div>
-            <p class="project-note">University capstone — repository access may be restricted.</p>
-          </article>
+          </header>
+          <p>
+            Full-stack course platform with auth, RBAC, real-time dashboards, Gemini summarization, and
+            PDF/Excel exports. QA Lead for a five-person Agile team — 25+ pull requests and ~50 Jest tests
+            across unit, integration, smoke, and UAT.
+          </p>
+          <p class="entry-tech">Next.js · TypeScript · PostgreSQL · Supabase · Jest</p>
+        </article>
 
-          <!-- WayneChat -->
-          <article class="project-card reveal">
-            <div class="project-body">
-              <p class="project-label">Full-Stack Web App</p>
-              <h3 class="project-title">WayneChat</h3>
-              <p class="project-desc">
-                A verified-anonymous university community platform with authentication, profiles, communities, posts,
-                replies, search, moderation reports, and realtime updates.
-              </p>
-              <ul class="chips" aria-label="Technologies used">
-                <li>React</li>
-                <li>Supabase</li>
-                <li>PostgreSQL</li>
-                <li>Realtime</li>
-                <li>Vercel</li>
-              </ul>
+        <article class="entry">
+          <header class="entry-head">
+            <div>
+              <h3><a href="https://github.com/elykap/flightpulse-app" target="_blank" rel="noopener noreferrer">FlightPulse</a></h3>
+              <p class="entry-role">Aviation operations analytics</p>
             </div>
-            <div class="project-links">
-              <a href="https://github.com/elykap/WayneChat" target="_blank" rel="noopener noreferrer">
-                Repository <span class="ext" aria-hidden="true">↗</span>
-              </a>
-            </div>
-          </article>
+          </header>
+          <p>
+            Full-stack platform that ingests flight and weather data for delay, cancellation, and route-performance
+            analysis — Python pipelines, Isolation Forest anomaly detection, FastAPI APIs, and a React dashboard.
+          </p>
+          <p class="entry-tech">Python · FastAPI · Pandas · PostgreSQL · React · Docker</p>
+        </article>
 
-          <!-- Cyclo.ai -->
-          <article class="project-card reveal">
-            <div class="project-body">
-              <p class="project-label">IBM watsonx 24-Hour Hackathon</p>
-              <h3 class="project-title">Cyclo.ai</h3>
-              <p class="project-desc">
-                An AI-powered business intelligence prototype for small businesses that analyzes uploaded sales,
-                inventory, and document data to surface trends, low-stock alerts, marketing recommendations, and
-                conversational Q&amp;A through Cyclo Bot.
-              </p>
-              <p class="project-desc project-desc-sub">Built in 24 hours with one software developer and one business teammate.</p>
-              <ul class="chips" aria-label="Technologies used">
-                <li>AI / LLM</li>
-                <li>Business Intelligence</li>
-                <li>Prototype</li>
-                <li>IBM watsonx</li>
-              </ul>
+        <article class="entry">
+          <header class="entry-head">
+            <div>
+              <h3><a href="https://github.com/elykap/WayneChat" target="_blank" rel="noopener noreferrer">WayneChat</a></h3>
+              <p class="entry-role">Full-stack web app</p>
             </div>
-            <div class="project-links">
-              <a href="https://github.com/elykap/Cyclo.ai" target="_blank" rel="noopener noreferrer">
-                Repository <span class="ext" aria-hidden="true">↗</span>
-              </a>
-            </div>
-          </article>
-        </div>
+          </header>
+          <p>
+            Verified-anonymous university community with auth, profiles, posts, search, moderation, and real-time updates.
+          </p>
+          <p class="entry-tech">React · Supabase · PostgreSQL · Vercel</p>
+        </article>
 
-        <p class="additional-work reveal">
-          Additional work: <strong>Intern Guide</strong> — an AI-assisted internship planner built with a student team.
+        <article class="entry">
+          <header class="entry-head">
+            <div>
+              <h3><a href="https://github.com/elykap/Cyclo.ai" target="_blank" rel="noopener noreferrer">Cyclo.ai</a></h3>
+              <p class="entry-role">IBM watsonx 24-hour hackathon</p>
+            </div>
+          </header>
+          <p>
+            AI business-intelligence prototype that turns sales, inventory, and document uploads into trends,
+            alerts, and conversational Q&amp;A.
+          </p>
+          <p class="entry-tech">IBM watsonx · LLM · Prototype</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="wrap narrow">
+        <h2>Contact</h2>
+        <p>Open to full-time software engineering roles.</p>
+        <p class="contact-line">
+          <a href="mailto:pootakyle@gmail.com">pootakyle@gmail.com</a>
         </p>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills" class="section" aria-labelledby="skills-heading">
-      <div class="container">
-        <header class="section-head reveal">
-          <p class="section-kicker">03 — Toolbox</p>
-          <h2 id="skills-heading">Technical Skills</h2>
-        </header>
-
-        <div class="skills-grid">
-          <div class="skill-group reveal">
-            <h3>Languages</h3>
-            <ul class="chips">
-              <li>C#</li><li>TypeScript</li><li>JavaScript</li><li>Python</li>
-              <li>SQL</li><li>Java</li><li>C++</li><li>HTML/CSS</li>
-            </ul>
-          </div>
-
-          <div class="skill-group reveal">
-            <h3>Frameworks &amp; Testing</h3>
-            <ul class="chips">
-              <li>React</li><li>Next.js</li><li>.NET</li>
-              <li>Tailwind CSS</li><li>Jest</li><li>React Testing Library</li>
-            </ul>
-          </div>
-
-          <div class="skill-group reveal">
-            <h3>Databases &amp; Services</h3>
-            <ul class="chips">
-              <li>SQL Server</li><li>PostgreSQL</li><li>Supabase</li>
-              <li>Firebase</li><li>Google Gemini API</li><li>Brevo</li>
-            </ul>
-          </div>
-
-          <div class="skill-group reveal">
-            <h3>Tools</h3>
-            <ul class="chips">
-              <li>Git</li><li>GitHub</li><li>Bitbucket</li><li>Docker</li>
-              <li>Dynatrace</li><li>Jira</li><li>GitHub Actions</li>
-              <li>Vercel</li><li>Visual Studio</li><li>VS Code</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT / EDUCATION -->
-    <section id="about" class="section section-alt" aria-labelledby="about-heading">
-      <div class="container">
-        <header class="section-head reveal">
-          <p class="section-kicker">04 — Background</p>
-          <h2 id="about-heading">About &amp; Education</h2>
-        </header>
-
-        <div class="about-grid">
-          <div class="about-copy reveal">
-            <p>
-              I am a Computer Science senior at Wayne State University graduating in August 2026, with a minor in
-              Business Administration. My experience spans enterprise software development, AI-enabled document
-              processing, full-stack applications, testing strategy, CI/CD, observability, and Agile collaboration.
-              I enjoy working across the stack, with a particular interest in building intuitive user-facing software
-              backed by reliable systems.
-            </p>
-
-            <div class="additional-role">
-              <h3>Additional Experience</h3>
-              <p>
-                <span class="role-name">Elite Parking Solutions</span> — Valet &amp; Traffic Direction Specialist
-                <span class="muted">· July 2023 – May 2026</span>
-              </p>
-            </div>
-          </div>
-
-          <aside class="education-card reveal" aria-label="Education">
-            <h3>Wayne State University</h3>
-            <p class="education-degree">B.S. in Computer Science</p>
-            <p class="education-minor">Minor in Business Administration</p>
-            <p class="education-grad">Graduation: August 2026</p>
-            <ul class="education-facts">
-              <li>GPA: 3.6 overall</li>
-              <li>Business minor GPA: 4.0</li>
-              <li>Dean's List: 3 semesters</li>
-              <li>WSU Gold Scholarship recipient</li>
-            </ul>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section" aria-labelledby="contact-heading">
-      <div class="container contact">
-        <header class="section-head reveal">
-          <p class="section-kicker">05 — Get in touch</p>
-          <h2 id="contact-heading">Let's build something useful.</h2>
-        </header>
-
-        <p class="contact-lead reveal">
-          I am currently preparing for full-time software engineering opportunities beginning after graduation in
-          August 2026.
-        </p>
-
-        <div class="contact-actions reveal">
-          <a class="btn btn-primary" href="mailto:pootakyle@gmail.com">Email me</a>
-          <a class="btn btn-outline" href="https://github.com/elykap/elykap.github.io/releases/latest/download/Kyle_Poota_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
-        </div>
-
-        <ul class="contact-list reveal">
-          <li><span class="contact-key">Email</span><a href="mailto:pootakyle@gmail.com">pootakyle@gmail.com</a></li>
-          <li><span class="contact-key">LinkedIn</span><a href="https://linkedin.com/in/kylepoota" target="_blank" rel="noopener noreferrer">linkedin.com/in/kylepoota</a></li>
-          <li><span class="contact-key">GitHub</span><a href="https://github.com/elykap" target="_blank" rel="noopener noreferrer">github.com/elykap</a></li>
-        </ul>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <p class="footer-name">Kyle Poota</p>
-      <ul class="footer-links">
-        <li><a href="https://github.com/elykap" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-        <li><a href="https://linkedin.com/in/kylepoota" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-        <li><a href="mailto:pootakyle@gmail.com">Email</a></li>
-      </ul>
-      <p class="footer-copy">© <span id="year">2026</span> Kyle Poota</p>
+    <div class="wrap footer-inner">
+      <p>© <span id="year">2026</span> Kyle Poota</p>
     </div>
   </footer>
+
+  <div id="resumeModal" class="resume-modal" hidden role="dialog" aria-modal="true" aria-labelledby="resumeTitle">
+    <div class="resume-dialog">
+      <header class="resume-toolbar">
+        <h2 id="resumeTitle">Resume</h2>
+        <div class="resume-toolbar-actions">
+          <a id="resumeDownload" class="resume-download" href="https://github.com/elykap/elykap.github.io/releases/latest/download/public_resume.pdf" target="_blank" rel="noopener noreferrer">Download</a>
+          <button type="button" id="resumeClose" class="resume-close" aria-label="Close resume viewer">×</button>
+        </div>
+      </header>
+      <p id="resumeStatus" class="resume-status" hidden>Loading resume…</p>
+      <div id="resumeViewer" class="resume-viewer" hidden></div>
+      <div id="resumeFallback" class="resume-fallback" hidden>
+        <p>Open the latest resume from GitHub Releases.</p>
+        <a id="resumeOpen" class="resume-open" href="https://github.com/elykap/elykap.github.io/releases/latest/download/public_resume.pdf" target="_blank" rel="noopener noreferrer">Open resume</a>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js" defer></script>
 </body>
